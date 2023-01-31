@@ -19,14 +19,14 @@ public class EtudiantController {
         IEtudiantService iEtudiantService;
 
         @GetMapping("etudiants")
-        public ResponseEntity<List<Etudiant>> getAllTutorials() {
+        public ResponseEntity<List<Etudiant>> getAllEtudiants() {
                 List<Etudiant> arEtudiant = new ArrayList<Etudiant>();
                 arEtudiant=iEtudiantService.findAll();
                 return new ResponseEntity<>(arEtudiant, HttpStatus.OK);
         }
 
         @GetMapping("/etudiant/{id}")
-        public ResponseEntity<Etudiant> getTutorialById(@PathVariable("id") long id) {
+        public ResponseEntity<Etudiant> getEtudiantById(@PathVariable("id") long id) {
             Optional<Etudiant> etudiantData = iEtudiantService.findById(id);
 
             if (etudiantData.isPresent()) {
