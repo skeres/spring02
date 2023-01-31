@@ -16,20 +16,17 @@ import java.util.Optional;
 public class EtudiantController {
 
         @Autowired
-        //EtudiantRepository etudiantRepository;
         IEtudiantService iEtudiantService;
 
         @GetMapping("etudiants")
         public ResponseEntity<List<Etudiant>> getAllTutorials() {
                 List<Etudiant> arEtudiant = new ArrayList<Etudiant>();
-                //arEtudiant=etudiantRepository.findAll();
                 arEtudiant=iEtudiantService.findAll();
                 return new ResponseEntity<>(arEtudiant, HttpStatus.OK);
         }
 
         @GetMapping("/etudiant/{id}")
         public ResponseEntity<Etudiant> getTutorialById(@PathVariable("id") long id) {
-            //Optional<Etudiant> etudiantData = etudiantRepository.findById(id);
             Optional<Etudiant> etudiantData = iEtudiantService.findById(id);
 
             if (etudiantData.isPresent()) {

@@ -28,8 +28,8 @@ import java.util.List;
     //Contains = clause like
     //Startwith = clause startwith
     //exemple de requete "pré-implémentée" :
-    public List<Etudiant> findByNom(String nom);
-    public List<Etudiant> findByNomContains(String valeur);
+    List<Etudiant> findByNom(String nom);
+    List<Etudiant> findByNomContains(String valeur);
 
     // 2ème possibilité : implémenter un requete spécifique
     // exemple de requete spécifique implémentée
